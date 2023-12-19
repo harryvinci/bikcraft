@@ -1,0 +1,52 @@
+:root{
+    /*cores*/
+    --c12:#000000;
+    --c11:#111111;
+    --c10:#2E2E2E;
+    --c09:#404040;
+    --c08:#595959;
+    --c07:#717171;
+    --c06:#9C9C9C;
+    --c05:#B2B2B2;
+    --c04:#CCCCCC;
+    --c03:#DEDEDE;
+    --c02:#EDEDED;
+    --c01:#F7F7F7;
+    --w:#FFFFFF;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    background: var(--c12);
+}
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+}
+.header-container nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header-container ul{
+    display: flex;
+    gap: 3rem;
+}
+.header-container a{
+    color: var(--w);
+    padding: 1rem 0;
+}
