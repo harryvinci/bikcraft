@@ -13,41 +13,115 @@
     --c02:#EDEDED;
     --c01:#F7F7F7;
     --w:#FFFFFF;
+    
+    --p5:#332200;
+    --p4:#664400;
+    --p3:#A66F00;
+    --p2:#E4A30B;
+    --p1:#FFBB00;
+
     /*tipografia*/
+    --titulo:'Poppins', sans-serif;
+    --texto:'Roboto', sans-serif;
+
+    --font-xxl: 4rem;
+    --font-xl: 2rem;
+    --font-l: 1.5rem;
+    --font-m: 1.125rem;
+    --font-s: 1rem;
+    --font-xs: 0.875rem;
+    --font-xxs: 0.75rem;
+
 }
+
+/*reset*/
+
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--texto);
+    font-size: var(--font-s);
+    line-height: 1.3em;
 }
 li{
     list-style: none;
 }
 a{
     text-decoration: none;
+    cursor: pointer;
 }
-.header{
+
+/*menu*/
+
+.header-bg{
     background: var(--c12);
+    padding: 1rem 0;
 }
 .header-container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
-    box-sizing: border-box;
-}
-.header-container nav{
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.header-container ul{
+.header-menu{
     display: flex;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-family: var(--titulo);
+    font-size: var(--font-m);
 }
-.header-container a{
+.header-menu a{
     color: var(--w);
-    padding: 1rem 0;
+    display: inline-block;
+    padding: 16px 0;
+    position: relative;
+}
+
+/*efeito hover do menu*/
+.header-menu a::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 4px;
+    background: var(--w);
+    transition: 0.3s;
+    position: absolute;
+}
+.header-menu a:hover::after{
+    width: 100%;
+}
+
+@media (max-width:1200px) {
+    .header-bg{
+        padding: 1rem;
+    }   
+}
+
+@media (max-width:800px) {
+    .header-menu{
+        gap: 20px;
+    }
+   .header-menu a{
+    padding: 8px 16px;
+    background: var(--c11);
+    border-radius: 8px;
+   }
+   .header-menu a::after{
+    display: none;
+   }
+}
+@media (max-width:600px){
+    .header-container{
+        flex-direction: column;
+    }
+    .header-menu{
+        justify-content: center;
+    }
 }
