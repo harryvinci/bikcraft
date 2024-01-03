@@ -43,7 +43,6 @@
 body{
     font-family: var(--texto);
     font-size: var(--font-s);
-    line-height: 1.3em;
 }
 li{
     list-style: none;
@@ -51,6 +50,58 @@ li{
 a{
     text-decoration: none;
     cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--titulo);
+    line-height: 1.125;
+}
+p{
+    line-height: 1.6;
+}
+
+/*elementos gerais*/
+
+.paragrafo-principal{
+    font-size: var(--font-m);
+    line-height: 2.25;
+}
+@media(max-width:1100px){
+    .paragrafo-principal{
+        line-height: 1.5;
+    }
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(var(--p1), var(--p2));
+    color: var(--p5);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
+    font-size: var(--font-m);
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 0.25rem;
+}
+.btn:hover{
+    background: linear-gradient(var(--p2), var(--p3));
+}
+@media(max-width:800px){
+    .btn{
+        padding: .5rem 1rem;
+        font-size: var(--font-s);
+    }
+}
+.container{
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (max-width:1200px) {
+    .container{
+        margin: 0 1rem;
+    }   
+}
+.destaque{
+    color: var(--p1);
 }
 
 /*menu*/
@@ -62,24 +113,21 @@ a{
 .header-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 .header-menu{
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 2.5rem;
     font-family: var(--titulo);
     font-size: var(--font-m);
 }
 .header-menu a{
     color: var(--w);
     display: inline-block;
-    padding: 16px 0;
+    padding: 1rem 0;
     position: relative;
 }
 
@@ -98,20 +146,14 @@ a{
     width: 100%;
 }
 
-@media (max-width:1200px) {
-    .header-bg{
-        padding: 1rem;
-    }   
-}
-
 @media (max-width:800px) {
     .header-menu{
-        gap: 20px;
+        gap: 1.25rem;
     }
    .header-menu a{
-    padding: 8px 16px;
+    padding: .5rem 1rem;
     background: var(--c11);
-    border-radius: 8px;
+    border-radius: .5rem;
    }
    .header-menu a::after{
     display: none;
@@ -124,4 +166,72 @@ a{
     .header-menu{
         justify-content: center;
     }
+}
+
+/*introducao*/
+
+.introducao-bg{
+    background: var(--c12);
+    color: var(--w);
+    box-shadow: inset 0 -120px var(--w);
+}
+.introducao-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3rem;
+}
+.introducao-container div{
+    align-self: self-end;
+    margin-bottom: 12.5rem;
+}
+.introducao-container div h1{
+    font-size: var(--font-xxl);
+    margin-bottom: 2rem;
+}
+@media (max-width:1100px){
+    .introducao-container div h1{
+        font-size: 3rem;
+    }
+}
+@media(max-width:800px){
+    .introducao-container div h1{
+        font-size: var(--font-xl);
+        margin-bottom: 1.5rem;
+    }
+    .introducao-container div{
+        align-self: self-end;
+        margin-bottom: 10rem;
+        margin-top: 2rem;
+    }
+    .introducao-bg{
+        background: var(--c12);
+        color: var(--w);
+        box-shadow: inset 0 -80px var(--w);
+    }
+}
+@media (max-width:600px){
+    .introducao-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .introducao-container div{
+        margin-bottom: 1rem;
+    }
+    .introducao-container img{
+        width: 100%;
+    }
+    .introducao-container picture{
+        height: 20rem;
+    }
+}
+.introducao-container div p{
+    margin-bottom: 1.125rem;
+    color: var(--c05);
+}
+.introducao-container img{
+    max-width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover; /*para a imagem ocupar todo o container sem distorcer*/
+    border-radius: .5rem;
 }
